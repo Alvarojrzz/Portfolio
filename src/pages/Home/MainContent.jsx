@@ -1,82 +1,87 @@
+const skills = [
+  { name: "Java", imageUrl: "/img/lenguajes/java.png" },
+  { name: "Python", imageUrl: "/img/lenguajes/python.png" },
+  { name: "C", imageUrl: "/img/lenguajes/c.png" },
+  { name: "C#", imageUrl: "/img/lenguajes/csharp.png" },
+  { name: "PHP", imageUrl: "/img/lenguajes/php.png" },
+  { name: "JavaScript", imageUrl: "/img/lenguajes/javascript.png" },
+  { name: "SQL", imageUrl: "/img/lenguajes/sql.jpeg" },
+  { name: "MySQL", imageUrl: "/img/lenguajes/mysql.png" },
+  { name: "PL/SQL", imageUrl: "/img/lenguajes/plsql.png" },
+  { name: "React", imageUrl: "/img/lenguajes/react.png" },
+  { name: "Angular", imageUrl: "/img/lenguajes/angular.png" },
+  { name: "Astro", imageUrl: "/img/lenguajes/astro.png" },
+  { name: "Tailwind CSS", imageUrl: "/img/lenguajes/tailwind.png" },
+  { name: "Linux", imageUrl: "/img/lenguajes/linux.png" },
+  { name: "RStudio", imageUrl: "/img/lenguajes/rstudio.png" },
+  { name: "Matlab", imageUrl: "/img/lenguajes/matlab.png" }
+];
+
 const MainContent = () => (
-    <main className="pt-20 pb-8 min-h-screen bg-[#0a192f] text-gray-300">
-      <div className="max-w-6xl mx-auto px-4 space-y-12">
-        {/* Sección Principal */}
-        <div className="animate-fade-in">
-          <h1 className="text-5xl font-bold text-teal-400 mb-6 font-mono">Bienvenido a mi cosmos digital</h1>
-          <p className="text-2xl mb-8 text-teal-100">
-            Hola, soy <span className="text-pink-400 font-semibold">Álvaro</span> 📍
-            <span className="border-b-2 border-teal-500 ml-2">Ingeniero Informático en formación</span>
+  <main className="pt-20 pb-8 min-h-screen bg-[#0a192f] text-gray-300">
+    <div className="max-w-6xl mx-auto px-4 space-y-12">
+      {/* Sección de Bienvenida */}
+      <div className="animate-fade-in">
+        <h1 className="text-5xl font-bold text-teal-400 mb-6">
+          Bienvenido a mi Portfolio
+        </h1>
+        <p className="text-2xl mb-8 text-teal-100">
+          Soy <span className="text-pink-400 font-semibold">Álvaro</span>, estudiante de Ingeniería Informática en la UCAM.
+        </p>
+      </div>
+
+      {/* Sección Sobre Mí */}
+      <div className="bg-[#112240] p-8 rounded-2xl shadow-2xl transform hover:scale-[1.01] transition-all">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-pink-400 bg-clip-text text-transparent mb-6">
+          Sobre mí
+        </h2>
+        <p className="text-lg leading-relaxed mb-8 text-justify">
+          Desde que comencé la formación en la carrera, he estado profundizando mis conocimientos en el desarrollo web y la programación, con un enfoque en la creación de soluciones eficientes y de calidad. Actualmente, sigo perfeccionando mis habilidades en Java y otros lenguajes.
+        </p>
+
+        {/* Sección de Habilidades Técnicas (Versión Chips) */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-pink-400 bg-clip-text text-transparent mb-6">
+            Habilidades Técnicas
+          </h2>
+          <p className="text-xl leading-relaxed mb-4">
           </p>
+          <div className="flex flex-wrap gap-4">
+            {skills.map((skill) => (
+              <div
+                key={skill.name}
+                className="bg-[#233554] p-4 rounded-full shadow-lg hover:scale-105 transition transform flex items-center justify-center"
+              >
+                <img
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className="h-8 w-8"
+                  title={skill.name}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-  
-        {/* Tarjeta Presentación */}
-        <div className="bg-[#112240] p-8 rounded-2xl shadow-2xl transform hover:scale-[1.01] transition-all">
-          <p className="text-lg leading-relaxed mb-8">
-            <span className="text-teal-400 text-2xl">🚀</span> Ingeniero de Código en Formación | UCAM<br/>
-            <em className="text-pink-300">"Donde los bucles while se entrelazan con sueños en compilación"</em>
-          </p>
-  
-          {/* Sección Circuito Principal */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-pink-400 bg-clip-text text-transparent mb-6">
-              🧠 Mi Circuito Principal
-            </h2>
-            <p className="text-xl leading-relaxed">
-              Veo el mundo en <span className="font-mono text-teal-400">{'{}'}</span> y sueño en 
-              <span className="font-mono text-pink-400 ml-2">binary</span>. Transformando café ☕ en algoritmos 
-              y domando <span className="underline decoration-pink-400">bugs</span> como dragones de código 🐉
+
+        {/* Sección de Contacto */}
+        <div className="space-y-8">
+          <div className="border-l-4 border-teal-500 pl-4">
+            <h4 className="text-2xl font-bold text-pink-300 mb-4">
+              En Busca de Nuevos Proyectos
+            </h4>
+            <p className="text-xl">
+              Siempre estoy abierto a colaborar en proyectos que me permitan crecer profesionalmente.
             </p>
           </div>
-  
-          {/* Lenguajes */}
-          <div className="mb-12">
-            <h3 className="text-3xl font-bold text-teal-300 mb-8">💻 Mis Aliados Digitales</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                ["Java", "⚙️ Arquitecto de lógica inquebrantable", "text-blue-400"],
-                ["Python", "🎩 Mago del código minimalista", "text-yellow-400"],
-                ["Astro", "🚀 Constructor de galaxias web", "text-orange-400"],
-                ["React/Angular", "💃 Coreógrafos del DOM", "text-sky-400"],
-                ["Tailwind", "🎨 Alquimista CSS", "text-cyan-400"]
-              ].map(([lang, desc, color]) => (
-                <div key={lang} className={`p-4 rounded-xl bg-[#233554] ${color} hover:bg-[#2a3b5f] transition-colors`}>
-                  <span className="text-2xl mr-3">▹</span>
-                  <span className="font-bold text-xl">{lang}</span>
-                  <p className="ml-8 mt-2 text-gray-300">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-  
-          {/* Busqueda y Contacto */}
-          <div className="space-y-8">
-            <div className="border-l-4 border-teal-500 pl-4">
-              <h4 className="text-2xl font-bold text-pink-300 mb-4">🔭 En Busca de...</h4>
-              <p className="text-xl">
-                Colisiones cuánticas entre teoría universitaria 
-                <span className="mx-2">🦉</span>y desafíos que hagan decir: 
-                <span className="italic text-teal-300">"¿Cómo no se nos ocurrió antes?"</span>
-              </p>
-            </div>
-  
-            <div className="text-center py-6">
-              <p className="text-2xl mb-4">📡 ¿Sintonizamos?</p>
-              <button className="bg-gradient-to-r from-teal-400 to-pink-500 text-white px-8 py-3 rounded-full 
-                              text-lg font-bold hover:scale-105 transition-transform shadow-lg">
-                Ctrl + Click para colaborar
-              </button>
-            </div>
-          </div>
         </div>
-  
-        {/* Cita Final */}
-        <blockquote className="text-center text-2xl italic text-pink-200 mt-16 border-t-2 border-teal-500 pt-8">
-          "No soy full-stack... aún. Pero mi stack de curiosidad está al 
-          <span className="text-teal-400 not-italic"> 📚🔥MAX</span>"
-        </blockquote>
       </div>
-    </main>
-  );
-  
-  export default MainContent;
+
+      {/* Cita Final */}
+      <blockquote className="text-center text-2xl italic text-pink-200 mt-16 border-t-2 border-teal-500 pt-8">
+        "El aprendizaje de nuevas tecnologías es un proceso constante."
+      </blockquote>
+    </div>
+  </main>
+);
+
+export default MainContent;

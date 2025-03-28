@@ -7,7 +7,7 @@ const Navbar = () => {
           {/* Contenedor centrado con todo el contenido */}
           <div className="flex justify-center">
             {/* Menú completo centrado */}
-            <div className="flex space-x-4 bg-blue-900 px-4 py-2 rounded-full shadow-md items-center">
+            <div className="flex space-x-4 bg-[#112240] px-4 py-2 rounded-full shadow-md items-center">
                 {/*Logo*/}
               <a href="/" className="pr-4">
                 <img 
