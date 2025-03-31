@@ -2,16 +2,24 @@ const skills = [
   { name: "Java", level: 60 },
   { name: "Python", level: 30 },
   { name: "JavaScript", level: 50 },
-  { name: "React", level: 0 },
-  { name: "Angular", level: 0 },
   { name: "SQL", level: 75 },
-  { name: "Tailwind CSS", level: 0 },
   { name: "Linux", level: 50 },
-  { name: "C#", level: 50 },
-  { name: "PHP", level: 60 },
+  { name: "C", level: 60 },
   { name: "RStudio", level: 40 },
   { name: "MatLab", level: 40 },
 ];
+
+const learningSkills = [
+  { name: 'Tailwind CSS', image: '/img/lenguajes/tail.png'},
+  { name: 'React', image: '/img/lenguajes/react.svg' },
+  { name: 'Spring Boot', image: '/img/lenguajes/springboot.png'},
+  { name: 'Angular' , image: '/img/lenguajes/Angular.png'},
+  { name: 'Docker' , image: '/img/lenguajes/docker.png'},
+  { name: 'RubyOnRails' , image: '/img/lenguajes/ruby.png'},
+  
+  
+];
+
 
 const MainContent = () => (
   <main className="pt-20 pb-8 min-h-screen bg-[#0a192f] text-gray-300">
@@ -22,6 +30,7 @@ const MainContent = () => (
           <h1 className="text-5xl font-bold text-teal-400 mb-6">
             Bienvenido a mi Portfolio
           </h1>
+          <hr className="border-gray-400 w-1/2 mb-6" />
           <p className="text-2xl mb-8 text-teal-100">
             Soy <span className="text-pink-400 font-semibold">Álvaro</span>, estudiante de Ingeniería Informática en la UCAM.
           </p>
@@ -74,6 +83,29 @@ const MainContent = () => (
       </div>
     </section>
 
+    {/* Seccion Habilidades en Aprendizaje*/}
+    <section id="futurasHabilidades" className="pt-20">
+      <div className="max-w-6xl mx-auto px-4 space-y-12">
+        <div className="bg-[#112240] p-8 rounded-2xl shadow-2xl">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-pink-400 bg-clip-text text-transparent mb-6 pb-6">
+            Habilidades en Aprendizaje
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 justify-items-center items-center">
+            {learningSkills.map((skill, index) => (
+              <div key={index} className="relative group">
+                <img
+                  src={skill.image}
+                  alt={skill.name}
+                  className="w-16 h-16 rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-125"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     {/* Sección Proyectos */}
     <section id="proyectos" className="pt-20">
       <div className="max-w-6xl mx-auto px-4 space-y-12">
@@ -84,51 +116,128 @@ const MainContent = () => (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Proyecto 1 */}
             <div className="bg-[#233554] p-6 rounded-xl shadow-md transform hover:scale-105 transition">
-              <h3 className="text-2xl font-bold text-teal-300">Gestor de Tareas</h3>
+              <h3 className="text-2xl font-bold text-teal-300">Proyecto 1</h3>
               <p className="text-gray-300 mt-2 text-justify">
-                Una aplicación web para gestionar tareas diarias, permitiendo crear, editar y eliminar tareas. Desarrollada con React y Node.js para una experiencia rápida y responsiva.
+                Descripción proyecto 1.
               </p>
               {/* Lenguajes utilizados */}
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">React</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Node.js</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">JavaScript</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 1</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 2</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 3</span>
               </div>
-              <a href="#" className="mt-4 inline-block text-teal-400 hover:underline">
-                Ver Proyecto
-              </a>
+              {/*Enlace a github */}
+              <a 
+                  href="https://github.com/enlace-a-github" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                  title="GitHub"
+                >
+                  <svg className="pt-3 w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                  </svg>
+                </a>
             </div>
             {/* Proyecto 2 */}
             <div className="bg-[#233554] p-6 rounded-xl shadow-md transform hover:scale-105 transition">
-              <h3 className="text-2xl font-bold text-teal-300">E-commerce Minimalista</h3>
+              <h3 className="text-2xl font-bold text-teal-300">Proyecto 2</h3>
               <p className="text-gray-300 mt-2 text-justify">
-                Una tienda en línea con un diseño limpio y funcional. Implementada con PHP y MySQL, ofrece una navegación sencilla y segura para los usuarios.
+                Descripción proyecto.
               </p>
               {/* Lenguajes utilizados */}
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">PHP</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">MySQL</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">HTML/CSS</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 1</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 2</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 3</span>
               </div>
-              <a href="#" className="mt-4 inline-block text-teal-400 hover:underline">
-                Ver Proyecto
-              </a>
+              {/*Enlace a github */}
+              <a 
+                  href="https://github.com/enlace-a-github" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                  title="GitHub"
+                >
+                  <svg className="pt-3 w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                  </svg>
+                </a>
             </div>
             {/* Proyecto 3 */}
             <div className="bg-[#233554] p-6 rounded-xl shadow-md transform hover:scale-105 transition">
-              <h3 className="text-2xl font-bold text-teal-300">Dashboard Analítico</h3>
+              <h3 className="text-2xl font-bold text-teal-300">Plantilla proyecto</h3>
               <p className="text-gray-300 mt-2 text-justify">
-                Un panel de control interactivo que visualiza datos en tiempo real. Construido con Angular y D3.js, ideal para la toma de decisiones basadas en datos precisos.
+                Descripción proyecto
               </p>
               {/* Lenguajes utilizados */}
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Angular</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">D3.js</span>
-                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">TypeScript</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 1</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 2</span>
+                <span className="bg-gray-800 text-sm text-teal-300 px-2 py-1 rounded">Lenguaje 3</span>
               </div>
-              <a href="#" className="mt-4 inline-block text-teal-400 hover:underline">
-                Ver Proyecto
-              </a>
+              {/*Enlace a github */}
+              <a 
+                  href="https://github.com/enlace-a-github" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                  title="GitHub"
+                >
+                  <svg className="pt-3 w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                  </svg>
+                </a>
+            </div>
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-pink-400 bg-clip-text text-transparent mb-6 col-span-full">
+              Pequeños proyectos
+            </h4>
+            {/* Proyecto 4 */}
+            <div className="bg-[#233554] p-4 rounded-xl shadow-md transform hover:scale-105 transition text-sm">
+              <h3 className="text-xl font-bold text-teal-300">Mi portfolio</h3>
+              <p className="text-gray-300 mt-2 text-justify">
+                Una página web donde hablo un poco sobre mí , mis habilidades , mis proyectos y mis redes sociales.
+              </p>
+              {/* Lenguajes utilizados */}
+              <div className="mt-4 flex flex-wrap gap-2 justify-center items-center">
+                <span className="bg-gray-800 text-xs text-teal-300 px-2 py-1 rounded">React</span>
+                <span className="bg-gray-800 text-xs text-teal-300 px-2 py-1 rounded">Tailwind CSS</span>
+                <span className="bg-gray-800 text-xs text-teal-300 px-2 py-1 rounded">JavaScript</span>
+              </div>
+              {/* Enlace a GitHub */}
+              <a
+                href="https://github.com/Alvarojrzz/Portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                title="GitHub"
+              >
+                <svg className="pt-3 w-10 h-10  mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                </svg>
+                </a>
+            </div>
+            <div className="bg-[#233554] p-4 rounded-xl shadow-md transform hover:scale-105 transition text-sm">
+              <h3 className="text-xl font-bold text-teal-300">Cliente FTP</h3>
+              <p className="text-gray-300 mt-2 text-justify">
+                Un cliente en JAVA que se conecta a un servidor FTP mediante Sockets y puedes realizar funciones como listar archivos , subir o bajar archivos y crear , borrar o renombrar carpetas. Además tiene un sistema de autenticación.
+              </p>
+              {/* Lenguajes utilizados */}
+              <div className="mt-4 flex flex-wrap gap-2 justify-center items-center">
+                <span className="bg-gray-800 text-xs text-teal-300 px-2 py-1 rounded">Java</span>
+              </div>
+              {/* Enlace a GitHub */}
+              <a
+                href="https://github.com/Alvarojrzz/ClienteFTP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                title="GitHub"
+              >
+                <svg className="pt-3 w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                </svg>
+                </a>
             </div>
           </div>
         </div>

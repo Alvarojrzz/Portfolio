@@ -1,3 +1,4 @@
+
 const Navbar = () => {
   // Función para scroll suave
   const scrollToSection = (sectionId) => {
@@ -47,6 +48,7 @@ const Navbar = () => {
               >
                 Habilidades
               </button>
+
               
               <button
                 onClick={() => scrollToSection('proyectos')}

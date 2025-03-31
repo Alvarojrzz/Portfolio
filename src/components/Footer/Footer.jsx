@@ -1,5 +1,5 @@
 const Footer = () => (
-    <footer className="bg-[#0a192f] text-white py-8">
+    <footer className="bg-[#0a192f] text-white py-8 fixed bottom-0 w-full">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4"> 
           {/* Mobile: elementos en columna | Desktop: en fila */}
